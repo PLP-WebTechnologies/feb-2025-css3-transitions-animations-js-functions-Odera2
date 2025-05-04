@@ -1,0 +1,152 @@
+body {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Light & Dark Themes with Gradients */
+.light-theme {
+    background: linear-gradient(to right, #ffffff, #f0f0f0);
+    color: #333;
+}
+
+.dark-theme {
+    background: linear-gradient(to right, #222, #444);
+    color: #f5f5f5;
+}
+
+.container {
+    text-align: center;
+    padding: 40px;
+}
+
+/* Buttons & Dynamic Accent Colors */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button.accent {
+    background-color: var(--accent-color, #3498db);
+    color: white;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+/* Animated Cards */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    width: 150px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    background-color: var(--accent-color, #3498db);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+/* Draggable Items */
+.draggable {
+    cursor: grab;
+}
+
+.draggable:active {
+    cursor: grabbing;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: var(--accent-color, #3498db);
+    color: white;
+    transition: left 0.3s ease-in-out;
+    padding: 20px;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 20px 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#closeMenu {
+    cursor: pointer;
+    font-size: 24px;
+    display: block;
+    text-align: right;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    animation: fadeIn 0.5s;
+}
+
+.modal-content {
+    text-align: center;
+}
+
+#closeModal {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 480px) {
+    .card-container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 200px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translate(-50%, -60%); }
+    100% { opacity: 1; transform: translate(-50%, -50%); }
+}
